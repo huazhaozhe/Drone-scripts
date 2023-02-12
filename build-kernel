@@ -360,7 +360,11 @@ END=$(date +"%s")
 DIFF=$((END - START))
 
 cd anykernel || exit
+echo export zip
+echo $(pwd)
+echo ${ZIPNAME}
 zip -r9 "${ZIPNAME}" ./* -x .git .gitignore ./*.zip
+ls -alh
 
 # RESPONSE=$(curl -# -F "name=${ZIPNAME}" -F "file=@${ZIPNAME}" -u :"${PD_API_KEY}" https://pixeldrain.com/api/file)
 # FILEID=$(echo "${RESPONSE}" | grep -Po '(?<="id":")[^"]*')
