@@ -376,6 +376,7 @@ echo ${CHECKER}
 #    echo "tg_post_error"
 #fi
 # cd "$(pwd)" || exit
-
+mkdir out
+mv ${ZIPNAME} out
 # Cleanup
 # rm -fr anykernel/
